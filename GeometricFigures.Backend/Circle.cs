@@ -10,8 +10,9 @@
             set => _r = ValidateR(value);
         }
 
-        public Circle(string name, double r) : base(name)
+        public Circle(string name, double r) : base()
         {
+            Name = name;
             R = r;
         }
 

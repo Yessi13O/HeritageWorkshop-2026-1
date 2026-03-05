@@ -14,8 +14,9 @@ namespace GeometricFigures.Backend
             set => _a = ValidateA(value);
         }
 
-        public Square(string name, double a) : base(name)
+        public Square(string name, double a) : base()
         {
+            Name = name;
             A = a;
         }
 
