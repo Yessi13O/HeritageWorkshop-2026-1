@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Linq;
+﻿namespace GeometricFigures.Backend;
 
-namespace GeometricFigures.Backend
-{
-    public abstract class GeometricFigure
+public abstract class GeometricFigure
+{   
+    //Property
+    public string Name { get; set; } = string.Empty;
+
+    //Methods
+    public abstract double GetArea();
+    public abstract double GetPerimeter();
+
+    public override string ToString()
     {
-        public string Name { get; set; } = string.Empty;
-
-        public abstract double GetArea();
-        public abstract double GetPerimeter();
-
-        public override string ToString()
-        {
-            return $"{Name,-15} => Area.....: {GetArea(),15:N5}   Perimiter: {GetPerimeter(),15:N5}";
-        }
+        return $"{Name,-15} => Area.....: {GetArea(),15:N5}   Perimiter: {GetPerimeter(),15:N5}";
     }
 }

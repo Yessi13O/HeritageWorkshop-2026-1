@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GeometricFigures.Backend;
+﻿namespace GeometricFigures.Backend;
 
 public class Triangle : Rectangle
 {
+    //Fields
+
     private double _c;
     private double _h;
 
+    //Propertys
     public double C
     {
         get => _c;
@@ -21,6 +20,7 @@ public class Triangle : Rectangle
         set => _h = ValidateH(value);
     }
 
+    //Constructor
     public Triangle(string name, double a, double b, double c, double h)
         : base(name, a, b)
     {
@@ -28,6 +28,7 @@ public class Triangle : Rectangle
         H = h;
     }
 
+    //Validations
     private double ValidateC(double value)
     {
         if (value <= 0)
@@ -42,7 +43,9 @@ public class Triangle : Rectangle
         return value;
     }
 
+    //Area calculation
     public override double GetArea() => (B * _h) / 2.0;
 
+    //Calculating the perimeter
     public override double GetPerimeter() => A + B + _c;
 }
